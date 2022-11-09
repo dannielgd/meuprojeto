@@ -1,3 +1,14 @@
-<h1>Meu nome é {{nome}}</h1>
+<div class="container">
+  <div class="alert alert-success" role="alert">
+    Funcionário Adicionado: <strong>{{nome}}</strong>
+  </div>
 
-<h1>Minha idade é {{1 + getIdade()}}</h1>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="nome" (input)="alterarNome($event)"
+      value="{{nome}}">
+  </div>
+
+  <button type="button" class="btn btn-primary" (click)="adicionar()">Adicionar</button>
+
+</div>
