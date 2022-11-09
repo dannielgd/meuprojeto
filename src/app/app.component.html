@@ -5,10 +5,12 @@
 
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="nome" #nomeInput />
+    <input type="text" class="form-control" id="nome" (input) = "alterarNome($event)"
+    [value]="nome" />
   </div>
 
-  <button type="button" class="btn btn-primary" (click)="adicionar(nomeInput.value)">Adicionar</button>
+  <button type="button" class="btn btn-primary"
+     (click)="adicionar()" [disabled]="nome.length == 0">Adicionar</button>
 
 
 </div>
