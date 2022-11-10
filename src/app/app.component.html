@@ -1,21 +1,10 @@
 <div class="container">
-  <div class="alert alert-success" role="alert" *ngIf = "adicionado">
-    Funcionário Adicionado: <strong>{{nome}}</strong>
-  </div>
 
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="nome" [(ngModel)] = "nome"
-    (focus)="adicionado = false" />
-  </div>
+  <app-funcionario-form (funcionarioAdicionado)="aoAdicionar($event)"></app-funcionario-form>
 
-  <button type="button" class="btn btn-primary"
-     (click)="adicionar()" [disabled]="nome.length == 0">Adicionar</button>
-
-
-     <div class="row" style="margin-top: 20px">
-      <div class="col-2" *ngFor="let f of funcionarios">
-          <app-funcionario-card [obj] = "f"></app-funcionario-card>
-      </div>
-  </div>
+  <div class="row" style="margin-top: 20px">
+    <div class="col-2" *ngFor="let f of funcionarios">
+        <app-funcionario-card [obj] = "f"></app-funcionario-card>
+    </div>
+</div>
 </div>
