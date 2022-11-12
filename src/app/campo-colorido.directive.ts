@@ -1,14 +1,16 @@
-import { Directive, ElementRef, HostBinding, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Input, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appCampoColorido]'
 })
 export class CampoColoridoDirective {
 
+    @Input('appCampoColorido') cor = 'gray';
+
     @HostBinding('style.backgroundColor') corDeFundo: string = 'transparent';
 
   @HostListener('focus') aoGanharFoco() {
-    this.corDeFundo = 'yellow'
+    this.corDeFundo = this.cor;
     // this.renderer.setStyle(this.elementRef.nativeElement,
     //     'background-color', 'yellow');
   }
